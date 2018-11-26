@@ -107,7 +107,7 @@
                                     <constraint firstAttribute="width" constant="20" id="dFW-Q1-CfW"/>
                                     <constraint firstAttribute="height" constant="20" id="zux-pz-ods"/>
                                 </constraints>
-                                <state key="normal" image="ic_arr_right"/>
+                                <state key="normal" image="modify"/>
                                 <connections>
                                     <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pNE-aO-EMD"/>
                                 </connections>
@@ -118,7 +118,7 @@
                                     <constraint firstAttribute="height" constant="20" id="sOa-G0-Cm2"/>
                                     <constraint firstAttribute="width" constant="20" id="yUs-MK-5FO"/>
                                 </constraints>
-                                <state key="normal" image="ic_arr_right"/>
+                                <state key="normal" image="modify"/>
                                 <connections>
                                     <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ijf-ok-S2I"/>
                                 </connections>
@@ -171,10 +171,9 @@
                                     <action selector="cardImageButtonClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aOq-kr-3Ic"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-lf-bHv">
-                                <rect key="frame" x="34" y="33.5" width="80" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="重新上传">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihb-lf-bHv">
+                                <rect key="frame" x="68" y="38" width="24" height="24"/>
+                                <state key="normal" image="chongxin">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -208,16 +207,16 @@
                             <constraint firstItem="6YZ-aI-j7C" firstAttribute="centerX" secondItem="rTU-pE-9pn" secondAttribute="centerX" constant="-6" id="3Y6-Ve-vTG"/>
                             <constraint firstAttribute="bottom" secondItem="oaf-kL-5AP" secondAttribute="bottom" id="7Yz-ex-4yZ"/>
                             <constraint firstAttribute="trailing" secondItem="XHY-7u-jmk" secondAttribute="trailing" constant="4" id="9C3-7d-m1n"/>
+                            <constraint firstItem="ihb-lf-bHv" firstAttribute="centerY" secondItem="rTU-pE-9pn" secondAttribute="centerY" id="9IP-zr-yzW"/>
                             <constraint firstItem="J98-hU-vnF" firstAttribute="leading" secondItem="6YZ-aI-j7C" secondAttribute="leading" id="Isy-U5-VsT"/>
                             <constraint firstItem="XHY-7u-jmk" firstAttribute="centerY" secondItem="rTU-pE-9pn" secondAttribute="centerY" id="JAy-63-f1L"/>
                             <constraint firstItem="J98-hU-vnF" firstAttribute="trailing" secondItem="6YZ-aI-j7C" secondAttribute="trailing" id="NNi-9N-7un"/>
-                            <constraint firstItem="ihb-lf-bHv" firstAttribute="trailing" secondItem="6YZ-aI-j7C" secondAttribute="trailing" id="Ogv-Ys-xoQ"/>
                             <constraint firstItem="ihb-lf-bHv" firstAttribute="centerY" secondItem="6YZ-aI-j7C" secondAttribute="centerY" id="TCp-sm-ZYl"/>
+                            <constraint firstItem="ihb-lf-bHv" firstAttribute="centerX" secondItem="rTU-pE-9pn" secondAttribute="centerX" id="Vpe-wA-6Ai"/>
                             <constraint firstItem="oaf-kL-5AP" firstAttribute="top" secondItem="rTU-pE-9pn" secondAttribute="top" id="Yan-nr-VMy"/>
                             <constraint firstItem="6YZ-aI-j7C" firstAttribute="centerY" secondItem="rTU-pE-9pn" secondAttribute="centerY" id="heU-pu-Z3b"/>
                             <constraint firstItem="J98-hU-vnF" firstAttribute="bottom" secondItem="6YZ-aI-j7C" secondAttribute="bottom" id="nMu-d3-N42"/>
                             <constraint firstAttribute="height" constant="100" id="qer-Y6-DIj"/>
-                            <constraint firstItem="ihb-lf-bHv" firstAttribute="leading" secondItem="6YZ-aI-j7C" secondAttribute="leading" id="xbO-Zc-N6H"/>
                         </constraints>
                     </view>
                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aer-tT-rqi">
@@ -298,7 +297,7 @@
                                     <constraint firstAttribute="height" constant="20" id="qt9-xr-ecF"/>
                                     <constraint firstAttribute="width" constant="20" id="u2u-yq-muO"/>
                                 </constraints>
-                                <state key="normal" image="ic_arr_right"/>
+                                <state key="normal" image="modify"/>
                                 <connections>
                                     <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="uQ9-um-bCc"/>
                                 </connections>
@@ -309,7 +308,7 @@
                                     <constraint firstAttribute="width" constant="20" id="3kp-8T-QwK"/>
                                     <constraint firstAttribute="height" constant="20" id="8ZQ-dy-HlT"/>
                                 </constraints>
-                                <state key="normal" image="ic_arr_right"/>
+                                <state key="normal" image="modify"/>
                                 <connections>
                                     <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rXS-rM-l1W"/>
                                 </connections>
@@ -370,7 +369,7 @@
                                     <constraint firstAttribute="width" constant="20" id="gLD-np-HNi"/>
                                     <constraint firstAttribute="height" constant="20" id="w9Z-hY-grs"/>
                                 </constraints>
-                                <state key="normal" image="ic_arr_right"/>
+                                <state key="normal" image="modify"/>
                                 <connections>
                                     <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="sRD-vg-sDi"/>
                                 </connections>
@@ -423,7 +422,7 @@
                             <constraint firstAttribute="height" constant="20" id="JOx-hD-CZx"/>
                             <constraint firstAttribute="width" constant="20" id="PBO-xo-K0j"/>
                         </constraints>
-                        <state key="normal" image="ic_arr_right"/>
+                        <state key="normal" image="modify"/>
                         <connections>
                             <action selector="isWriteClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="yan-hm-hhD"/>
                         </connections>
@@ -488,7 +487,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chongxin" width="24" height="24"/>
         <image name="ic_arr_right" width="32" height="32"/>
+        <image name="modify" width="24" height="24"/>
         <image name="ocr_btn" width="75" height="75"/>
     </resources>
 </document>

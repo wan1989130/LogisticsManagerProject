@@ -21,10 +21,13 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jkn-oG-Mos">
                         <rect key="frame" x="0.0" y="0.0" width="95" height="97"/>
                     </imageView>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-r7-E4S">
-                        <rect key="frame" x="12.5" y="32" width="70" height="33"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <state key="normal" title="重新上传">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c4j-r7-E4S">
+                        <rect key="frame" x="23.5" y="24.5" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="YKQ-4d-dr9"/>
+                            <constraint firstAttribute="width" constant="48" id="eTJ-OH-FHx"/>
+                        </constraints>
+                        <state key="normal" image="chongxin">
                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </state>
                         <connections>
@@ -55,17 +58,17 @@
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="c4j-r7-E4S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1A9-AO-gtB"/>
                 <constraint firstItem="6KE-aq-n8T" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="3fS-zn-5aN"/>
                 <constraint firstItem="jkn-oG-Mos" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5G2-pf-F01"/>
                 <constraint firstAttribute="bottom" secondItem="jkn-oG-Mos" secondAttribute="bottom" id="DFh-NL-d51"/>
                 <constraint firstItem="jkn-oG-Mos" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="FWn-sg-rdK"/>
                 <constraint firstAttribute="bottom" secondItem="6KE-aq-n8T" secondAttribute="bottom" id="USC-lE-Ia3"/>
                 <constraint firstAttribute="trailing" secondItem="6KE-aq-n8T" secondAttribute="trailing" id="Z8D-vl-R1X"/>
+                <constraint firstItem="c4j-r7-E4S" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="bPM-ZX-Sfl"/>
                 <constraint firstAttribute="trailing" secondItem="jkn-oG-Mos" secondAttribute="trailing" id="exP-QJ-npw"/>
                 <constraint firstAttribute="trailing" secondItem="bXx-tl-GKK" secondAttribute="trailing" id="j3j-fj-I6I"/>
-                <constraint firstItem="c4j-r7-E4S" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="l2t-2e-QpI"/>
                 <constraint firstItem="bXx-tl-GKK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="p6E-zQ-Uyk"/>
-                <constraint firstItem="c4j-r7-E4S" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zyT-mD-PDg"/>
             </constraints>
             <size key="customSize" width="95" height="97"/>
             <connections>
@@ -78,6 +81,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="chongxin" width="24" height="24"/>
         <image name="choose_false" width="24" height="24"/>
     </resources>
 </document>

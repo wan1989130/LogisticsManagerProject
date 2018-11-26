@@ -67,10 +67,13 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF4-9p-gQs">
-                                        <rect key="frame" x="30" y="43.5" width="70" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <state key="normal" title="重新上传">
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF4-9p-gQs">
+                                        <rect key="frame" x="41" y="36" width="48" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="48" id="6ea-YI-BrD"/>
+                                            <constraint firstAttribute="width" constant="48" id="Y61-D2-erf"/>
+                                        </constraints>
+                                        <state key="normal" image="chongxin">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -81,10 +84,10 @@
                                 <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Fo4-Tz-JtZ" firstAttribute="top" secondItem="eMd-ym-gr0" secondAttribute="bottom" constant="4" id="6SY-T8-WsW"/>
-                                    <constraint firstItem="NF4-9p-gQs" firstAttribute="centerY" secondItem="c9U-eI-8fs" secondAttribute="centerY" id="8uc-fn-IRJ"/>
                                     <constraint firstItem="ttE-yq-Raj" firstAttribute="leading" secondItem="c9U-eI-8fs" secondAttribute="leading" id="GEt-GJ-Vai"/>
                                     <constraint firstItem="Ecc-eE-L3n" firstAttribute="top" secondItem="c9U-eI-8fs" secondAttribute="top" id="KrH-pj-9Ka"/>
                                     <constraint firstItem="Fo4-Tz-JtZ" firstAttribute="centerX" secondItem="c9U-eI-8fs" secondAttribute="centerX" id="SMe-Dc-nKs"/>
+                                    <constraint firstItem="NF4-9p-gQs" firstAttribute="centerY" secondItem="c9U-eI-8fs" secondAttribute="centerY" id="Seq-Ix-O2z"/>
                                     <constraint firstItem="4TY-tu-5jJ" firstAttribute="leading" secondItem="c9U-eI-8fs" secondAttribute="leading" id="Tu2-hf-R6b"/>
                                     <constraint firstAttribute="trailing" secondItem="4TY-tu-5jJ" secondAttribute="trailing" id="Y1Q-xj-RZn"/>
                                     <constraint firstAttribute="bottom" secondItem="ttE-yq-Raj" secondAttribute="bottom" id="Z9f-Nm-N0u"/>
@@ -92,7 +95,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Ecc-eE-L3n" secondAttribute="trailing" id="gVO-1C-k8g"/>
                                     <constraint firstItem="eMd-ym-gr0" firstAttribute="centerY" secondItem="c9U-eI-8fs" secondAttribute="centerY" constant="-6" id="nBR-xF-BjL"/>
                                     <constraint firstAttribute="bottom" secondItem="4TY-tu-5jJ" secondAttribute="bottom" id="ns4-Qf-jsk"/>
-                                    <constraint firstItem="NF4-9p-gQs" firstAttribute="centerX" secondItem="c9U-eI-8fs" secondAttribute="centerX" id="pLW-a0-sNd"/>
+                                    <constraint firstItem="NF4-9p-gQs" firstAttribute="centerX" secondItem="c9U-eI-8fs" secondAttribute="centerX" id="rFJ-yu-7sq"/>
                                     <constraint firstAttribute="trailing" secondItem="ttE-yq-Raj" secondAttribute="trailing" id="rnO-WA-aNW"/>
                                     <constraint firstItem="ttE-yq-Raj" firstAttribute="top" secondItem="c9U-eI-8fs" secondAttribute="top" id="sXo-Z4-6tF"/>
                                 </constraints>
@@ -218,6 +221,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="chongxin" width="24" height="24"/>
         <image name="close" width="24" height="24"/>
     </resources>
 </document>
