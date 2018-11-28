@@ -421,11 +421,23 @@
                     self.areaModelArr = [self getAreaModelArray:_provinceIndex cityIndex:0];
                     [self.pickerView reloadComponent:1];
                     [self.pickerView selectRow:0 inComponent:1 animated:YES];
+                //TODO WY
+                if(self.areaModelArr.count > 0){
                     [self.pickerView reloadComponent:2];
                     [self.pickerView selectRow:0 inComponent:2 animated:YES];
-                    self.selectProvinceModel = self.provinceModelArr[_provinceIndex];
+                }else{
+                    [self.pickerView reloadComponent:2];
+
+                }
                 
+                    self.selectProvinceModel = self.provinceModelArr[_provinceIndex];
+                //TODO WY
+                if(self.cityModelArr.count > 0){
                     self.selectCityModel = self.cityModelArr[0];
+                }else{
+                    self.selectCityModel = nil;
+                }
+                
                 //TODO WY
                 if([self.areaModelArr count] > 0){
                     self.selectAreaModel = self.areaModelArr[0];

@@ -48,6 +48,7 @@ extension SendGoodsPhotoViewController{
     func initUI(){
         initCollectionView()
         loadRightBarButtonItem()
+
     }
     func initCollectionView(){
         let layout = UICollectionViewFlowLayout()
