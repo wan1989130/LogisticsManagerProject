@@ -312,6 +312,10 @@
 		E3C0FFA5219557E60015491A /* LogisticsManagerProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0FFA4219557E60015491A /* LogisticsManagerProjectUITests.swift */; };
 		E3C0FFB3219558240015491A /* AppDelegate+Private.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C0FFB2219558240015491A /* AppDelegate+Private.swift */; };
 		E3C84DD921A6B2BC009D5FF6 /* OcrDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3C84DD821A6B2BC009D5FF6 /* OcrDataModel.swift */; };
+		E3D798CB21AFDF2A007DC421 /* WSDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3D798C721AFDF2A007DC421 /* WSDatePickerView.xib */; };
+		E3D798CC21AFDF2A007DC421 /* WSDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D798C821AFDF2A007DC421 /* WSDatePickerView.m */; };
+		E3D798CD21AFDF2A007DC421 /* NSDate+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D798C921AFDF2A007DC421 /* NSDate+Extension.m */; };
+		E3D798CE21AFDF2A007DC421 /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D798CA21AFDF2A007DC421 /* UIView+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -716,6 +720,13 @@
 		E3C0FFFE219558FE0015491A /* CompanyRegisterSuccessView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompanyRegisterSuccessView.xib; sourceTree = "<group>"; };
 		E3C0FFFF219558FE0015491A /* QrCodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QrCodeView.xib; sourceTree = "<group>"; };
 		E3C84DD821A6B2BC009D5FF6 /* OcrDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OcrDataModel.swift; sourceTree = "<group>"; };
+		E3D798C421AFDF2A007DC421 /* NSDate+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Extension.h"; sourceTree = "<group>"; };
+		E3D798C521AFDF2A007DC421 /* WSDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDatePickerView.h; sourceTree = "<group>"; };
+		E3D798C621AFDF2A007DC421 /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		E3D798C721AFDF2A007DC421 /* WSDatePickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSDatePickerView.xib; sourceTree = "<group>"; };
+		E3D798C821AFDF2A007DC421 /* WSDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDatePickerView.m; sourceTree = "<group>"; };
+		E3D798C921AFDF2A007DC421 /* NSDate+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Extension.m"; sourceTree = "<group>"; };
+		E3D798CA21AFDF2A007DC421 /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2157,6 +2168,7 @@
 		E3C0FFB9219558FE0015491A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E3D798C321AFDF2A007DC421 /* WSDaePickerView */,
 				E3BD1AF821995A24001B29B9 /* 选择地址滚轮 */,
 				E31C2A702198F76C0079B8E3 /* 跑马灯 */,
 				E32F84842196B17D00570179 /* ZJPickerView */,
@@ -2393,6 +2405,20 @@
 			path = Tip;
 			sourceTree = "<group>";
 		};
+		E3D798C321AFDF2A007DC421 /* WSDaePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				E3D798C421AFDF2A007DC421 /* NSDate+Extension.h */,
+				E3D798C521AFDF2A007DC421 /* WSDatePickerView.h */,
+				E3D798C621AFDF2A007DC421 /* UIView+Extension.h */,
+				E3D798C721AFDF2A007DC421 /* WSDatePickerView.xib */,
+				E3D798C821AFDF2A007DC421 /* WSDatePickerView.m */,
+				E3D798C921AFDF2A007DC421 /* NSDate+Extension.m */,
+				E3D798CA21AFDF2A007DC421 /* UIView+Extension.m */,
+			);
+			path = WSDaePickerView;
+			sourceTree = "<group>";
+		};
 		F79DEC4E54E20B7815A90B77 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -2570,6 +2596,7 @@
 				E31C2A5F2197F6DC0079B8E3 /* DeliverGoodsViewController.xib in Resources */,
 				E3C0FF8A219557E40015491A /* Main.storyboard in Resources */,
 				E3C00291219559000015491A /* HSPopupSelectDayView.xib in Resources */,
+				E3D798CB21AFDF2A007DC421 /* WSDatePickerView.xib in Resources */,
 				E3C00276219558FF0015491A /* ShakeView.xib in Resources */,
 				E31C2A522197F5F00079B8E3 /* ComprehensiveQueryListTableViewCell.xib in Resources */,
 				E32F83CA21964B9600570179 /* InformationMessageListTableViewCell.xib in Resources */,
@@ -2770,6 +2797,7 @@
 				E3C002C1219559000015491A /* CATransition+HS.swift in Sources */,
 				E3C00264219558FF0015491A /* DropListView.swift in Sources */,
 				E3C002AB219559000015491A /* FMDBHelper.swift in Sources */,
+				E3D798CE21AFDF2A007DC421 /* UIView+Extension.m in Sources */,
 				E3C002B7219559000015491A /* UIAlertController+LH.swift in Sources */,
 				E3C002EF219559000015491A /* PersonRegisterDataController.swift in Sources */,
 				E3C0025D219558FF0015491A /* HSRightBarButtonItemMenu.swift in Sources */,
@@ -2783,6 +2811,7 @@
 				E3BD1B1121995A25001B29B9 /* NSDate+BRPickerView.m in Sources */,
 				E33C81D8219BF33700881407 /* ComprehensiveQueryDetailViewController.swift in Sources */,
 				E3C00285219559000015491A /* TYAlertView.m in Sources */,
+				E3D798CC21AFDF2A007DC421 /* WSDatePickerView.m in Sources */,
 				E3C00279219559000015491A /* MenuViewContainer.m in Sources */,
 				E31C2A5B2197F6A90079B8E3 /* MSDataProvider+ComprehensiveQuery.swift in Sources */,
 				E3C002F1219559000015491A /* PersonRegisterViewController.swift in Sources */,
@@ -2881,6 +2910,7 @@
 				E31C2A7D219919FE0079B8E3 /* SendGoodsMessageTableViewCell.swift in Sources */,
 				E33C81EA219BFD9200881407 /* SendPersonMessageDetailTableViewCell.swift in Sources */,
 				E3C0030F219559000015491A /* CommonWebViewController.swift in Sources */,
+				E3D798CD21AFDF2A007DC421 /* NSDate+Extension.m in Sources */,
 				E3C003C6219559000015491A /* BaseDataController.swift in Sources */,
 				E3C003CC219559000015491A /* BaseAreaListDataModel.swift in Sources */,
 				E3BF6DDB2195B50F00C1AFAF /* InformationMessageViewController.swift in Sources */,

@@ -24,6 +24,19 @@ class SelectDateView: UIView {
         
         self.delegate = delegate
         let datePicker = UIDatePicker()
+        
+        let date = Date()
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy-MM-dd"
+        let currentTime = timeFormatter.string(from: date ) as String
+        
+        let userCalendar = Calendar.current
+        let date2 = userCalendar.date(byAdding: .year, value: 2, to: date)
+        
+        //最小最大日期
+//        datePicker.minimumDate = date
+//        datePicker.maximumDate = date2
+        
         datePicker.datePickerMode = .date
         let locale = Locale.init(identifier: "zh_CN")
         let cformatter = DateFormatter()

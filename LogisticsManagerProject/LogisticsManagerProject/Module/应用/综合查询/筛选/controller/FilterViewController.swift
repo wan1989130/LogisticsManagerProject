@@ -35,16 +35,56 @@ class FilterViewController: BaseViewController,UITextFieldDelegate {
         filterModel.etime = ""
     }
     @IBAction func startTimeClick(_ sender: Any) {
-        let dateView = SelectDateView(delegate: self,currentStr:filterModel.stime)
-        timeType = .begin
-        dateView.pro = self
-        dateView.show()
+        var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormat.string(from: selectDate!)
+            self.startTimeLabel.isHidden = false
+            self.pleaseSelectStartButton.isHidden = true
+            self.startCancelButton.isHidden = false
+            self.startTimeLabel.text = dateString
+            
+            if !String.isNilOrEmpty(dateString){
+                
+                
+                
+                self.filterModel.stime = dateString.replacingOccurrences(of: "-", with: "")
+            }
+        }
+        datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
+        datepicker2?.dateLabelColor = UIColor.darkGray
+        datepicker2?.datePickerColor = UIColor.darkGray
+        
+        datepicker2?.show()
+        
+//        let dateView = SelectDateView(delegate: self,currentStr:filterModel.stime)
+//        timeType = .begin
+//        dateView.pro = self
+//        dateView.show()
     }
     @IBAction func endTimeClick(_ sender: Any) {
-        let dateView = SelectDateView(delegate: self,currentStr:filterModel.etime)
-        timeType = .end
-        dateView.pro = self
-        dateView.show()
+        var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
+            let dateFormat = DateFormatter()
+            dateFormat.dateFormat = "yyyy-MM-dd"
+            let dateString = dateFormat.string(from: selectDate!)
+            self.endTimeLabel.isHidden = false
+            self.pleaseSelectEndButton.isHidden = true
+            self.endCancelButton.isHidden = false
+            self.endTimeLabel.text = dateString
+            
+            if !String.isNilOrEmpty(dateString){
+                self.filterModel.etime = dateString.replacingOccurrences(of: "-", with: "")
+            }
+        }
+        datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
+        datepicker2?.dateLabelColor = UIColor.darkGray
+        datepicker2?.datePickerColor = UIColor.darkGray
+        
+        datepicker2?.show()
+//        let dateView = SelectDateView(delegate: self,currentStr:filterModel.etime)
+//        timeType = .end
+//        dateView.pro = self
+//        dateView.show()
     }
     var timeType:SelectTimeType = .begin
     var dataController:FilterDataController!
@@ -104,36 +144,36 @@ extension FilterViewController{
 extension FilterViewController{
     
 }
-extension FilterViewController:SelectDateDelegate{
-    func selectDate(dateString: String) {
-        if self.timeType == .begin{
-//            startClickButton.isHidden = true
-            startTimeLabel.isHidden = false
-            pleaseSelectStartButton.isHidden = true
-            startCancelButton.isHidden = false
-            startTimeLabel.text = dateString
-            
-            if !String.isNilOrEmpty(dateString){
-                
-                
-                
-                filterModel.stime = dateString.replacingOccurrences(of: "-", with: "")
-            }
-            
-            
-        }
-        else if timeType == .end{
-//            endClickButton.isHidden = true
-            endTimeLabel.isHidden = false
-            pleaseSelectEndButton.isHidden = true
-            endCancelButton.isHidden = false
-            endTimeLabel.text = dateString
-            
-            if !String.isNilOrEmpty(dateString){
-                filterModel.etime = dateString.replacingOccurrences(of: "-", with: "")
-            }
-        }
-    }
-}
+//extension FilterViewController:SelectDateDelegate{
+//    func selectDate(dateString: String) {
+//        if self.timeType == .begin{
+////            startClickButton.isHidden = true
+//            startTimeLabel.isHidden = false
+//            pleaseSelectStartButton.isHidden = true
+//            startCancelButton.isHidden = false
+//            startTimeLabel.text = dateString
+//
+//            if !String.isNilOrEmpty(dateString){
+//
+//
+//
+//                filterModel.stime = dateString.replacingOccurrences(of: "-", with: "")
+//            }
+//
+//
+//        }
+//        else if timeType == .end{
+////            endClickButton.isHidden = true
+//            endTimeLabel.isHidden = false
+//            pleaseSelectEndButton.isHidden = true
+//            endCancelButton.isHidden = false
+//            endTimeLabel.text = dateString
+//
+//            if !String.isNilOrEmpty(dateString){
+//                filterModel.etime = dateString.replacingOccurrences(of: "-", with: "")
+//            }
+//        }
+//    }
+//}
 
 
