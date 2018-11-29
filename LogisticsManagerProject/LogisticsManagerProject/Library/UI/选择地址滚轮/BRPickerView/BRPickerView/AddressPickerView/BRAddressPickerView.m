@@ -376,13 +376,16 @@
     // 自适应最小字体缩放比例
     label.minimumScaleFactor = 0.5f;
     if (component == 0) {
+//        NSLog(@"aaa1%d=%d",row,self.provinceModelArr.count);
         BRProvinceModel *model = self.provinceModelArr[row];
         label.text = model.region_name;
     }else if (component == 1){
         BRCityModel *model = self.cityModelArr[row];
+//        NSLog(@"aaa2%d=%d",row,self.cityModelArr.count);
         label.text = model.region_name;
     }else if (component == 2){
         BRAreaModel *model = self.areaModelArr[row];
+//        NSLog(@"aaa3%d=%d",row,self.areaModelArr.count);
         label.text = model.region_name;
     }
     return bgView;
@@ -392,10 +395,13 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (component == 0) { // 选择省
         // 保存选择的省份的索引
+
         _provinceIndex = row;
+
         switch (self.showType) {
             case BRAddressPickerModeProvince:
             {
+                
                 self.selectProvinceModel = self.provinceModelArr[_provinceIndex];
                 self.selectCityModel = nil;
                 self.selectAreaModel = nil;
@@ -416,7 +422,7 @@
                 break;
             case BRAddressPickerModeArea:
             {
-                
+//                NSLog(@"aaa4%d=%d",_provinceIndex,self.provinceModelArr.count);
                     self.cityModelArr = [self getCityModelArray:_provinceIndex];
                     self.areaModelArr = [self getAreaModelArray:_provinceIndex cityIndex:0];
                     [self.pickerView reloadComponent:1];
@@ -463,6 +469,7 @@
                 break;
             case BRAddressPickerModeArea:
             {
+//                NSLog(@"aaa5%d=%d",_cityIndex,self.cityModelArr.count);
                 self.areaModelArr = [self getAreaModelArray:_provinceIndex cityIndex:_cityIndex];
                 [self.pickerView reloadComponent:2];
                 [self.pickerView selectRow:0 inComponent:2 animated:YES];
@@ -479,9 +486,16 @@
     }
     if (component == 2) { // 选择区
         // 保存选择的地区的索引
+//        NSLog(@"aaa5%d=%d",_areaIndex,self.areaModelArr.count);
         _areaIndex = row;
         if (self.showType == BRAddressPickerModeArea) {
-            self.selectAreaModel = self.areaModelArr[_areaIndex];
+            //TODO WY
+            if(self.areaModelArr.count > 0){
+                self.selectAreaModel = self.areaModelArr[_areaIndex];
+            }else{
+                self.selectAreaModel = nil;
+            }
+            
         }
     }
     
