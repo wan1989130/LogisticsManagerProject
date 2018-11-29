@@ -394,34 +394,34 @@ extension DeliverGoodsViewController: SelectSendAddressDelegate{
     }
     func selectTime() {
         closeKeyboard()
-        var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
-            let dateFormat = DateFormatter()
-            dateFormat.dateFormat = "yyyy-MM-dd"
-            let dateString = dateFormat.string(from: selectDate!)
-            self.saveModel.sendDate = dateString
-            let cell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! SendGoodsMessageTableViewCell
-            cell.selectTimeButton.setTitle(dateString, for: .normal)
-        }
-        datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
-        datepicker2?.dateLabelColor = UIColor.darkGray
-        datepicker2?.datePickerColor = UIColor.darkGray
-        
-        datepicker2?.show()
-//        let dateView = SelectDateView(delegate: self,currentStr:saveModel.sendDate)
-//        dateView.pro = self
-//        dateView.show()
+//        var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
+//            let dateFormat = DateFormatter()
+//            dateFormat.dateFormat = "yyyy-MM-dd"
+//            let dateString = dateFormat.string(from: selectDate!)
+//            self.saveModel.sendDate = dateString
+//            let cell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! SendGoodsMessageTableViewCell
+//            cell.selectTimeButton.setTitle(dateString, for: .normal)
+//        }
+//        datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
+//        datepicker2?.dateLabelColor = UIColor.darkGray
+//        datepicker2?.datePickerColor = UIColor.darkGray
+//
+//        datepicker2?.show()
+        let dateView = SelectDateView(delegate: self,currentStr:saveModel.sendDate)
+        dateView.pro = self
+        dateView.show()
     }
 }
 //发货信息 - 时间
-//extension DeliverGoodsViewController:SelectDateDelegate{
+extension DeliverGoodsViewController:SelectDateDelegate{
 
-//    func selectDate(dateString: String) {
-//        closeKeyboard()
-//        saveModel.sendDate = dateString
-//         let cell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! SendGoodsMessageTableViewCell
-//        cell.selectTimeButton.setTitle(dateString, for: .normal)
-//    }
-//}
+    func selectDate(dateString: String) {
+        closeKeyboard()
+        saveModel.sendDate = dateString
+         let cell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0)) as! SendGoodsMessageTableViewCell
+        cell.selectTimeButton.setTitle(dateString, for: .normal)
+    }
+}
 //收货信息
 extension DeliverGoodsViewController:SelectGetPersonDelegate{
     func selectGetPersonAddress() {
@@ -492,16 +492,7 @@ extension DeliverGoodsViewController: UIImagePickerControllerDelegate,UINavigati
     }
 }
 
-extension DeliverGoodsViewController:TZImagePickerControllerDelegate{
-    func initImagePick(){
-        imagePicker = TZImagePickerController.init(maxImagesCount: 1, delegate: self,urlCount:0)
-        // 在内部是否显示拍照按钮
-        imagePicker?.allowTakePicture = true
-        
-        imagePicker?.sortAscendingByModificationDate = false
-    }
-    
-}
+
 //点击保存
 extension DeliverGoodsViewController:SendGoodsSaveDelegate {
     func saveClick() {

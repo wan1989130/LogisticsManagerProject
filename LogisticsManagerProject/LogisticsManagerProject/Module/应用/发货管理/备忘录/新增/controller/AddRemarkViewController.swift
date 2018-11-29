@@ -22,24 +22,24 @@ class AddRemarkViewController: BaseViewController {
     
     @IBAction func switchChange(_ sender: UISwitch) {
         if sender.isOn{
-//            let dateView = SelectDateView(delegate: self,currentStr:time)
-//            dateView.pro = self
-//            dateView.show()
-            var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
-                let dateFormat = DateFormatter()
-                dateFormat.dateFormat = "yyyy-MM-dd"
-                let dateString = dateFormat.string(from: selectDate!)
-                if self.idModel != nil{
-                    self.idModel.time = dateString
-                }
-                self.time = dateString
-                self.timeLabel.text = self.time
-            }
-            datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
-            datepicker2?.dateLabelColor = UIColor.darkGray
-            datepicker2?.datePickerColor = UIColor.darkGray
-            
-            datepicker2?.show()
+            let dateView = SelectDateView(delegate: self,currentStr:time)
+            dateView.pro = self
+            dateView.show()
+//            var datepicker2 = WSDatePickerView.init(dateStyle: DateStyleShowYearMonthDay) { (selectDate) in
+//                let dateFormat = DateFormatter()
+//                dateFormat.dateFormat = "yyyy-MM-dd"
+//                let dateString = dateFormat.string(from: selectDate!)
+//                if self.idModel != nil{
+//                    self.idModel.time = dateString
+//                }
+//                self.time = dateString
+//                self.timeLabel.text = self.time
+//            }
+//            datepicker2?.doneButtonColor = UIColor.lightGray.withAlphaComponent(0.2)
+//            datepicker2?.dateLabelColor = UIColor.darkGray
+//            datepicker2?.datePickerColor = UIColor.darkGray
+//
+//            datepicker2?.show()
         }else if !sender.isOn{
             if idModel != nil{
                 idModel.time = ""
@@ -124,15 +124,15 @@ extension AddRemarkViewController{
         
     }
 }
-//extension AddRemarkViewController:SelectDateDelegate{
-//    func selectDate(dateString: String) {
-//        if idModel != nil{
-//            idModel.time = dateString
-//        }
-//        time = dateString
-//        timeLabel.text = time
-//    }
-//}
+extension AddRemarkViewController:SelectDateDelegate{
+    func selectDate(dateString: String) {
+        if idModel != nil{
+            idModel.time = dateString
+        }
+        time = dateString
+        timeLabel.text = time
+    }
+}
 extension AddRemarkViewController:UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         if (textView.markedTextRange == nil && textView.text.count >= 500) {
