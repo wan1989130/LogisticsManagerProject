@@ -41,7 +41,7 @@ class SelectDateView: UIView {
             let dateFormat = DateFormatter()
             dateFormat.dateFormat = "YYYY-MM-dd"
             let dateString = dateFormat.string(from: datePicker.date)
-            print(dateString)
+//            print(dateString)
             self.pro?.selectDate(dateString: dateString)
             
         }
