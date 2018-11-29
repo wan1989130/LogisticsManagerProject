@@ -16,11 +16,15 @@ class LHHTTPClient: NSObject {
     var basePath:String = ""
     static var sharedClients = NSMutableDictionary()
     static var hud:MBProgressHUD!
+    
+    
+  
     func showHud(){
         LHHTTPClient.hud = MBProgressHUD.showAdded(to: UIApplication.shared.keyWindow!, animated: true)
         LHHTTPClient.hud.label.text = "数据加载中"
     }
     func hideHud(){
+        
         LHHTTPClient.hud.hide(animated: true)
         LHHTTPClient.hud = nil
     }

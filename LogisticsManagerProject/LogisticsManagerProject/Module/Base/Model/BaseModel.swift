@@ -13,7 +13,7 @@ class BaseModel: Mappable {
     var name:String = ""
     var code:String?
     var msg:String?
-    var lastPage = -1
+    var lastPage:Int = -1
     
     init(){
         

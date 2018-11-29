@@ -339,7 +339,8 @@ extension DeliverGoodsViewController {
             "typeFile":"0",
             "loginName":MyConfig.shared().loginName
         ]
-        let imageData:Data = portrait.jpegData(compressionQuality: 1) ?? Data()
+
+        let imageData:Data = imageWithImageSimple(image: portrait, newSize: portrait.size)
         dataController.uploadCard(imgDataArray:  [imageData], parameter: parameter) { (isSucceed, info) in
             self.saveModel.imageSendPhoto = portrait
             if isSucceed{
@@ -697,6 +698,25 @@ extension DeliverGoodsViewController:SendPersonMessageCardClickDelegate{
         cell.cardImageButton.setBackgroundImage(portrait, for: .normal)
         self.tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: .none)
         
+        
+    }
+    
+    //压缩图片
+    fileprivate func imageWithImageSimple(image:UIImage,newSize:CGSize)->Data{
+        UIGraphicsBeginImageContext(newSize)
+        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        var compress:CGFloat = 1
+        var data = newImage.jpegData(compressionQuality: compress)
+        var maxLength = 200 * 1024
+        
+        while data!.count > maxLength && compress > 0.01 {
+            compress -= 0.02
+            data = newImage.jpegData(compressionQuality: compress)
+        }
+//        let tempImage = UIImage(data: data!)
+//        UIGraphicsEndImageContext();
+        return data!
         
     }
 }

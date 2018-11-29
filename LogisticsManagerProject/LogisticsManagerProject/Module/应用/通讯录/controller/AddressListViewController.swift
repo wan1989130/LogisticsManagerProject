@@ -91,11 +91,23 @@ extension AddressListViewController:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let model = dataController.groupedStudents[indexPath.section][indexPath.row]
-        let phoneNum = "tel:" + model.phone
-        let callWebview = UIWebView()
-        callWebview.loadRequest(URLRequest.init(url: URL.init(string: phoneNum)!))
-        self.view.addSubview(callWebview)
+        callPhone(model: model)
+//        let phoneNum = "tel:" + model.phone
+//        let callWebview = UIWebView()
+//        callWebview.loadRequest(URLRequest.init(url: URL.init(string: phoneNum)!))
+//        self.view.addSubview(callWebview)
         
+    }
+    func callPhone(model:AddressListModel){
+        let alertVC :UIAlertController = UIAlertController.init(title:"确定要拨打 \(model.name)(\(model.phone))电话吗?", message:"", preferredStyle: .alert)
+        let falseAA :UIAlertAction = UIAlertAction.init(title:"取消", style: .cancel, handler:nil)
+        let trueAA :UIAlertAction = UIAlertAction.init(title:"确定", style: .default) { (alertAction)in
+            //拨打电话进行报警
+            UIApplication.shared.openURL(URL.init(string:"tel://\(model.phone)")! )
+        }
+        alertVC.addAction(falseAA)
+        alertVC.addAction(trueAA)
+        self.present(alertVC, animated:true, completion: nil)
     }
     
 }

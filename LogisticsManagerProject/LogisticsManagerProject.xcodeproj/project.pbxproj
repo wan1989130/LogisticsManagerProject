@@ -1069,8 +1069,8 @@
 		E32F84842196B17D00570179 /* ZJPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				E32F84852196B17D00570179 /* ZJPickerView.m */,
 				E32F84862196B17D00570179 /* ZJPickerView.h */,
+				E32F84852196B17D00570179 /* ZJPickerView.m */,
 			);
 			path = ZJPickerView;
 			sourceTree = "<group>";

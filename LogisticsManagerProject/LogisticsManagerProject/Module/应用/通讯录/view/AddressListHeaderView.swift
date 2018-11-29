@@ -24,5 +24,10 @@ extension AddressListHeaderView:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         delegate.searchClick(searchBar.text ?? "")
     }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == ""{
+            delegate.searchClick("")
+        }
+    }
     
 }

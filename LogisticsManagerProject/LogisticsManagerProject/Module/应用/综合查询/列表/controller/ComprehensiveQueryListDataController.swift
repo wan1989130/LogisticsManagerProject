@@ -12,14 +12,13 @@ class ComprehensiveQueryListDataController: BaseDataController {
     var model:ComprehensiveQueryListDataModel = ComprehensiveQueryListDataModel()
         var dataArray:Array<ComprehensiveQueryListModel> = [ComprehensiveQueryListModel]()
     
-    var lastPage = -1
+    
     
     //获取发货信息列表与统计分析钻取页共用
     func shippingList(parameter:NSMutableDictionary,completionBlock:@escaping RequestCompleteBlock){
         MSDataProvider.shippingList(delegate: self.delegate!, parameter: parameter) { (isSuccess,result) in
             if isSuccess{
                 self.model = Mapper<ComprehensiveQueryListDataModel>().map(JSONObject: result)!
-               self.dataArray = self.model.data
                 completionBlock(true, nil)
             }else{
                 completionBlock(false, nil)

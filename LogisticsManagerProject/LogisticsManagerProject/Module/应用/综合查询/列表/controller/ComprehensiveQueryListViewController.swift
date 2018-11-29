@@ -29,13 +29,23 @@ class ComprehensiveQueryListViewController: BaseViewController {
 extension ComprehensiveQueryListViewController{
     fileprivate func initData(){
         dataController = ComprehensiveQueryListDataController(delegate: self)
+        //从分析统计过来
+        if senderParam != nil && senderParam is String{
+            filterModel.startTime = senderParam as! String
+            
+        }
         
     }
     
     fileprivate func initUI(){
         self.view.backgroundColor = UIColor(hexString: "F0F0F0")
         self.edgesForExtendedLayout = .top
-        loadRightBarButtonItem()
+        //从分析统计过来
+        if senderParam != nil && senderParam is String{
+        }else{
+            loadRightBarButtonItem()
+        }
+        
         initTableView()
     }
     
@@ -53,6 +63,7 @@ extension ComprehensiveQueryListViewController{
         animator.loadingDescription = "加载中..."
         
         self.tableView.es.addPullToRefresh(animator: animator) {
+            self.filterModel = FilterModel()
             self.tableView.es.resetNoMoreData()
             self.comprehensiveQueryList(loadType: .top)
         }
@@ -124,7 +135,7 @@ extension ComprehensiveQueryListViewController{
             "info":filterModel.toJSONString()
         ]
         dataController.shippingList(parameter: parameter) { (isSucceed, result) in
-            if self.pageIndex <= self.dataController.lastPage{
+            if self.pageIndex <= self.dataController.model.lastPage{
                 if loadType == .top {
                     self.tableView.es.stopPullToRefresh(ignoreDate: true, ignoreFooter: false)
                     
@@ -134,6 +145,7 @@ extension ComprehensiveQueryListViewController{
                     self.tableView.es.stopLoadingMore()
                 }
                 if self.dataController.model.data.count > 0{
+                    
                     for item in self.dataController.model.data{
                         self.dataController.dataArray.append(item)
                     }

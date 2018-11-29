@@ -11,6 +11,7 @@ import ObjectMapper
 class ComprehensiveQueryListDataModel: BaseModel{
     var data:Array<ComprehensiveQueryListModel> = [ComprehensiveQueryListModel]()
     override func mapping(map: Map) {
+        super.mapping(map: map)
         data    <- map["obj"]
     }
 }

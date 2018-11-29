@@ -216,6 +216,17 @@ extension AnalysisViewController{
 }
 
 extension AnalysisViewController:  IAxisValueFormatter, IValueFormatter,ChartViewDelegate{
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        var date = ""
+        //201809格式
+        if Int(entry.x) < 9{
+            date = selectTime + "0" + String(Int(entry.x) + 1)
+        }else{
+            date = selectTime + String(Int(entry.x) + 1)
+        }
+        
+        pushViewController("ComprehensiveQueryListViewController",sender:date)
+    }
     //x轴坐标
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
         if (axis is XAxis) {
