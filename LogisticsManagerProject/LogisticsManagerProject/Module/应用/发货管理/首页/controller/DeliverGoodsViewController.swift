@@ -302,7 +302,8 @@ extension DeliverGoodsViewController {
             "typeFile":"0",
             "loginName":MyConfig.shared().loginName
         ]
-        let imageData:Data = portrait.jpegData(compressionQuality: 1) ?? Data()
+        let imageData:Data = portrait.imageWithImageSimple(newSize: CGSize(width: portrait.size.width / 4, height: portrait.size.height / 4), maxLength: 200 * 1024)
+        
         dataController.uploadPhoto(imgDataArray:  [imageData], parameter: parameter) { (isSucceed, info) in
              let cell = self.tableView.cellForRow(at: IndexPath.init(row: 3, section: 0)) as!PhotoTableViewCell
             if isSucceed{
@@ -340,7 +341,7 @@ extension DeliverGoodsViewController {
             "loginName":MyConfig.shared().loginName
         ]
 
-        let imageData:Data = imageWithImageSimple(image: portrait, newSize: portrait.size)
+        let imageData:Data = portrait.imageWithImageSimple(newSize: portrait.size, maxLength: 200 * 1024)
         dataController.uploadCard(imgDataArray:  [imageData], parameter: parameter) { (isSucceed, info) in
             self.saveModel.imageSendPhoto = portrait
             if isSucceed{
@@ -505,40 +506,40 @@ extension DeliverGoodsViewController:SendGoodsSaveDelegate {
     }
     //提交前check
     func checkFun()->Bool{
-        if saveModel.sendName == "" || saveModel.sendSex == "" || saveModel.sendMz == "" || saveModel.sendCard == "" || saveModel.sendCardAddress == "" || saveModel.sendCsrq == ""{
+        if String.isAllApacing(str: saveModel.sendName) || String.isAllApacing(str: saveModel.sendSex) || String.isAllApacing(str: saveModel.sendMz) || String.isAllApacing(str: saveModel.sendCard) || String.isAllApacing(str: saveModel.sendCardAddress) || String.isAllApacing(str: saveModel.sendCsrq){
             LHAlertView.showTipAlertWithTitle("证件信息识别不全，请重新识别")
             return false
-        }else if saveModel.smsNum == ""{
+        }else if String.isAllApacing(str: saveModel.smsNum){
             LHAlertView.showTipAlertWithTitle("物流单号不能为空")
             return false
-        }else if saveModel.name == ""{
+        }else if String.isAllApacing(str: saveModel.name){
             LHAlertView.showTipAlertWithTitle("货物名称不能为空")
             return false
-        }else if saveModel.sendPhone == ""{
+        }else if String.isAllApacing(str: saveModel.sendPhone){
             LHAlertView.showTipAlertWithTitle("联系电话不能为空")
             return false
-        }else if saveModel.sendAid == ""{
+        }else if String.isAllApacing(str: saveModel.sendAid){
             LHAlertView.showTipAlertWithTitle("联系地点不能为空")
             return false
-        }else if saveModel.sendAddress == ""{
+        }else if String.isAllApacing(str: saveModel.sendAddress){
             LHAlertView.showTipAlertWithTitle("详细地址不能为空")
             return false
-        }else if saveModel.sendDate == ""{
+        }else if String.isAllApacing(str: saveModel.sendDate){
             LHAlertView.showTipAlertWithTitle("发货时间不能为空")
             return false
-        }else if saveModel.getName == ""{
+        }else if String.isAllApacing(str: saveModel.getName){
             LHAlertView.showTipAlertWithTitle("收货人不能为空")
             return false
-        }else if saveModel.getPhone == ""{
+        }else if String.isAllApacing(str: saveModel.getPhone){
             LHAlertView.showTipAlertWithTitle("联系电话不能为空")
             return false
-        }else if saveModel.getAid == ""{
+        }else if String.isAllApacing(str: saveModel.getAid){
             LHAlertView.showTipAlertWithTitle("收货地点不能为空")
             return false
-        }else if saveModel.getAddress == ""{
+        }else if String.isAllApacing(str: saveModel.getAddress){
             LHAlertView.showTipAlertWithTitle("详细地址不能为空")
             return false
-        }else if saveModel.sendCardFullface == ""{
+        }else if String.isAllApacing(str: saveModel.sendCardFullface){
             LHAlertView.showTipAlertWithTitle("发货人近照不能为空")
             return false
         }else if saveModel.sendPhotoStatusModel.count < 1{
@@ -573,7 +574,7 @@ extension DeliverGoodsViewController:SendPersonMessageCardClickDelegate{
     //上传图片接口
     fileprivate func ocrFunction(portrait:UIImage){
         self.showHud()
-        let imageData:Data = portrait.jpegData(compressionQuality: 0.5) ?? Data()
+        let imageData:Data = portrait.imageWithImageSimple(newSize: CGSize(width: portrait.size.width / 4, height: portrait.size.height / 4), maxLength: 200 * 1024)
         let type = "2"
         let option = ""
         let password = "null"
@@ -706,21 +707,21 @@ extension DeliverGoodsViewController:SendPersonMessageCardClickDelegate{
     }
     
     //压缩图片
-    fileprivate func imageWithImageSimple(image:UIImage,newSize:CGSize)->Data{
-        UIGraphicsBeginImageContext(newSize)
-        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
-        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        var compress:CGFloat = 1
-        var data = newImage.jpegData(compressionQuality: compress)
-        var maxLength = 200 * 1024
-        
-        while data!.count > maxLength && compress > 0.01 {
-            compress -= 0.02
-            data = newImage.jpegData(compressionQuality: compress)
-        }
-//        let tempImage = UIImage(data: data!)
-//        UIGraphicsEndImageContext();
-        return data!
-        
-    }
+//    fileprivate func imageWithImageSimple(image:UIImage,newSize:CGSize)->Data{
+//        UIGraphicsBeginImageContext(newSize)
+//        image.draw(in: CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height))
+//        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+//        var compress:CGFloat = 1
+//        var data = newImage.jpegData(compressionQuality: compress)
+//        var maxLength = 200 * 1024
+//
+//        while data!.count > maxLength && compress > 0.01 {
+//            compress -= 0.02
+//            data = newImage.jpegData(compressionQuality: compress)
+//        }
+////        let tempImage = UIImage(data: data!)
+////        UIGraphicsEndImageContext();
+//        return data!
+//
+//    }
 }

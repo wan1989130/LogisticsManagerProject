@@ -98,7 +98,7 @@ extension AddRemarkViewController{
         self.navigationItem.rightBarButtonItem = rightBarBtn
     }
     @objc func rightItemClick(){
-        if String.isNilOrEmpty(contentTextView.text){
+        if String.isAllApacing(str: contentTextView.text){
             LHAlertView.showTipAlertWithTitle("请输入内容")
             return
         }

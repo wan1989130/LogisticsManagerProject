@@ -87,10 +87,17 @@ extension SelectCompanyViewController{
 }
 extension SelectCompanyViewController:UISearchBarDelegate{
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        closeKeyboard()
         searchName = searchBar.text ?? ""
         queryByNameList()
         
         //        searchBar.resignFirstResponder()
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == ""{
+            searchName = ""
+            queryByNameList()
+        }
     }
   
 }

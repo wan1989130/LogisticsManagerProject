@@ -167,7 +167,7 @@ extension SendGoodsPhotoViewController{
             "typeFile":"0",
             "loginName":MyConfig.shared().loginName
         ]
-        let imageData:Data = portrait.jpegData(compressionQuality: 1) ?? Data()
+        let imageData:Data = portrait.imageWithImageSimple(newSize: CGSize(width: portrait.size.width / 4, height: portrait.size.height / 4), maxLength: 200 * 1024)
         dataController.uploadPhoto(imgDataArray:  [imageData], parameter: parameter) { (isSucceed, info) in
             
             let model = SendPhotoStatusModel()

@@ -99,10 +99,11 @@ class LoginViewController: BaseViewController {
     
     func checkFun() -> Bool{
      
-//        if !userNameTextField.text!.isLegalMobile(){
-//            return false
-//        }
-        if String.isNilOrEmpty(passwordTextField.text){
+        if String.isAllApacing(str: userNameTextField.text){
+            LHAlertView.showTipAlertWithTitle("用户名不能为空")
+            return false
+        }
+        if String.isAllApacing(str: passwordTextField.text){
             LHAlertView.showTipAlertWithTitle("密码不能为空")
             return false
         }

@@ -91,15 +91,15 @@ extension PersonRegisterViewController{
             LHAlertView.showTipAlertWithTitle("请选择所属单位")
             return false
         }
-        if String.isNilOrEmpty(nameTextField.text){
+        if String.isAllApacing(str: nameTextField.text){
             LHAlertView.showTipAlertWithTitle("请输入姓名")
             return false
         }
-        if String.isNilOrEmpty(userNameTextField.text){
+        if String.isAllApacing(str: userNameTextField.text){
             LHAlertView.showTipAlertWithTitle("请输入用户名")
             return false
         }
-        if String.isNilOrEmpty(passwordTextField.text){
+        if String.isAllApacing(str: passwordTextField.text){
             LHAlertView.showTipAlertWithTitle("请输入密码")
             return false
         }

@@ -75,6 +75,7 @@
 		E33C81F1219C315E00881407 /* GetPersonMessageDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33C81EF219C315E00881407 /* GetPersonMessageDetailTableViewCell.swift */; };
 		E33C81F5219C3A1600881407 /* PhotoDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E33C81F3219C3A1600881407 /* PhotoDetailTableViewCell.xib */; };
 		E33C81F6219C3A1600881407 /* PhotoDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33C81F4219C3A1600881407 /* PhotoDetailTableViewCell.swift */; };
+		E33FBDF021B0CEED00491244 /* UIImage + Compressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33FBDEF21B0CEED00491244 /* UIImage + Compressor.swift */; };
 		E3A1970B219B01F900426B3B /* RemarkListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A19709219B01F900426B3B /* RemarkListViewController.swift */; };
 		E3A1970C219B01F900426B3B /* RemarkListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3A1970A219B01F900426B3B /* RemarkListViewController.xib */; };
 		E3A1970E219B040B00426B3B /* RemarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A1970D219B040B00426B3B /* RemarkModel.swift */; };
@@ -415,6 +416,7 @@
 		E33C81EF219C315E00881407 /* GetPersonMessageDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPersonMessageDetailTableViewCell.swift; sourceTree = "<group>"; };
 		E33C81F3219C3A1600881407 /* PhotoDetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotoDetailTableViewCell.xib; sourceTree = "<group>"; };
 		E33C81F4219C3A1600881407 /* PhotoDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailTableViewCell.swift; sourceTree = "<group>"; };
+		E33FBDEF21B0CEED00491244 /* UIImage + Compressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Compressor.swift"; sourceTree = "<group>"; };
 		E3A19709219B01F900426B3B /* RemarkListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkListViewController.swift; sourceTree = "<group>"; };
 		E3A1970A219B01F900426B3B /* RemarkListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RemarkListViewController.xib; sourceTree = "<group>"; };
 		E3A1970D219B040B00426B3B /* RemarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemarkModel.swift; sourceTree = "<group>"; };
@@ -2319,6 +2321,7 @@
 			children = (
 				E3C0FFDB219558FE0015491A /* LHImageCompressor.m */,
 				E3C0FFDC219558FE0015491A /* LHImageCompressor.h */,
+				E33FBDEF21B0CEED00491244 /* UIImage + Compressor.swift */,
 			);
 			path = "图片压缩";
 			sourceTree = "<group>";
@@ -2751,6 +2754,7 @@
 				E3C00294219559000015491A /* BaseTextField.swift in Sources */,
 				E3C00267219558FF0015491A /* MSCommentEditView.swift in Sources */,
 				E3A1970E219B040B00426B3B /* RemarkModel.swift in Sources */,
+				E33FBDF021B0CEED00491244 /* UIImage + Compressor.swift in Sources */,
 				E3C002A7219559000015491A /* SBJsonTokeniser.m in Sources */,
 				E3C0028D219559000015491A /* TYBaseAnimation.m in Sources */,
 				E32F83CD21964BB300570179 /* InformationMessageDataModel.swift in Sources */,

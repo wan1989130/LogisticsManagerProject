@@ -9,6 +9,28 @@
 import UIKit
 //"yyyy-MM-dd HH:mm:ss"
 extension String {
+    /// 判断是不是全是空格
+    ///
+    /// - Parameter str: str description
+    
+    /// - Returns: <#return value description#>
+    static func isAllApacing(str:String?) -> Bool {
+        
+        if str == nil {
+            return true
+        }
+        
+        let set = NSCharacterSet.whitespacesAndNewlines
+        let trimedString = str?.trimmingCharacters(in: set)
+        if trimedString?.count == 0{
+            return  true
+        }else{
+            return  false
+        }
+        
+    }
+    
+  
     static func isNilOrEmpty(_ text:Any?) -> Bool{
         if !(text is String || text is NSString){
             return true
