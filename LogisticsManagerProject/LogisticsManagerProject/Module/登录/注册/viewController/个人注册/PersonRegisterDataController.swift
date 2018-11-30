@@ -33,9 +33,9 @@ class PersonRegisterDataController: BaseDataController {
         MSDataProvider.addUser(delegate: self.delegate!, parameter: parameter) { (isSuccess,result) in
             if isSuccess{
                 let model = Mapper<PersonRegisterSuccessDataModel>().map(JSONObject: result)
-                if model != nil && model!.msg != nil{
-                    LHAlertView.showTipAlertWithTitle(model!.msg!)
-                }
+//                if model != nil && model!.msg != nil{
+                    LHAlertView.showTipAlertWithTitle("已提交，待管理员审核")
+//                }
                 completionBlock(true, nil)
             }else{
                 completionBlock(false, nil)
