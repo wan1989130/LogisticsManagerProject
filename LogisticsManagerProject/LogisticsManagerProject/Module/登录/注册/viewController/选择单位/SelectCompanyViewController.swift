@@ -80,7 +80,7 @@ extension SelectCompanyViewController{
                     self.noDataLabel.isHidden = true
                 }
                 self.tableView.reloadData()
-                
+                self.searchBar.resignFirstResponder()
             }
         }
     }
@@ -95,9 +95,12 @@ extension SelectCompanyViewController:UISearchBarDelegate{
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchBar.text == ""{
+            
+            
             searchName = ""
             queryByNameList()
         }
     }
+    
   
 }
