@@ -3127,7 +3127,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN9FP4NC8P;
+				DEVELOPMENT_TEAM = MVQQ4NL9A9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LogisticsManagerProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3139,7 +3139,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LogisticsManagerProject/Library/UI/CafToMp3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.net.huihai.LogisticsManagerProject;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.net.qianniao.LogisticsManagerProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LogisticsManagerProject/LogisticsManagerProject-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -3156,7 +3156,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = ZN9FP4NC8P;
+				DEVELOPMENT_TEAM = MVQQ4NL9A9;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = LogisticsManagerProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -3168,7 +3168,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/LogisticsManagerProject/Library/UI/CafToMp3",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = cn.net.huihai.LogisticsManagerProject;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.net.qianniao.LogisticsManagerProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "LogisticsManagerProject/LogisticsManagerProject-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;

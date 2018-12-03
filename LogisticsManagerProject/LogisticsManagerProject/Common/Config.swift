@@ -15,7 +15,7 @@ let ScreenHeight:CGFloat = UIScreen.main.bounds.size.height
 
 
 //程序相关
-let MyAppID:String = "1402329643" //appId 1402329643
+let MyAppID:String = "1445137631" //appId 1402329643
 let ProductId:String = "a131be5242a311e8b50500505694781a"//
 let GetAreaServerClientIdentifier = "GetAreaServerClientIdentifier"
 
